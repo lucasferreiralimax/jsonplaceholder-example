@@ -1,11 +1,13 @@
 <script setup>
-import { ref, watch  } from 'vue'
+import { reactive, ref, watch  } from 'vue'
 import { getUserList, getPostList } from "@/services/Winprovit"
+import ErrorHandler from './ErrorHandler.vue';
 
 let usersData = ref([]);
 let postsData = ref([]);
 
 let postsResult = ref([]);
+let resultError = reactive([]);
 
 const mergeUserPost = (posts, users) => {
   const arrayMerge = [];
@@ -23,11 +25,11 @@ const mergeUserPost = (posts, users) => {
 
 getPostList()
   .then((postsResponse) => {
-    console.log(postsResponse)
     postsData.value = postsResponse;
   })
   .catch((error) => {
-    console.log("error get post list", error);
+    resultError.push(`Error get post list - ${error.message}`)
+    console.log("Error get post list", error);
   });
 
 getUserList()
@@ -35,7 +37,8 @@ getUserList()
     usersData.value = usersResponse;
   })
   .catch((error) => {
-    console.log("error get user list", error);
+    resultError.push(`Error get user list - ${error.message}`)
+    console.log("Error get user list", error);
   });
 
 watch([usersData, postsData], () => {
@@ -46,6 +49,7 @@ watch([usersData, postsData], () => {
 </script>
 
 <template>
+  <ErrorHandler :errors="resultError" />
   <article class="post" v-for="post in postsResult">
     <h2 class="title">Title: {{ post.title }}</h2>
     <div class="info">
@@ -59,7 +63,7 @@ watch([usersData, postsData], () => {
 
 <style lang="scss">
 .post {
-  margin: 2rem;
+  margin: 2rem 0;
   padding: 2rem;
   border: 1px solid var(--color-border);
   border-radius: 10px;

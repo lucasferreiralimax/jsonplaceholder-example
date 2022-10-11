@@ -1,6 +1,6 @@
 # winprovit
 
-This template should help get you started developing with Vue 3 in Vite.
+A test with render list posts with merged author and a lot test units automatic
 
 ## Recommended IDE Setup
 
@@ -32,13 +32,6 @@ npm run build
 
 ```sh
 npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run build
-npm run test:e2e # or `npm run test:e2e:ci` for headless testing
 ```
 
 ### Lint with [ESLint](https://eslint.org/)

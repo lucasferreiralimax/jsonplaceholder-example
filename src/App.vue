@@ -4,7 +4,7 @@ import Winprovit from './components/Winprovit.vue'
 
 <template>
   <header>
-    <h1>Winprovit</h1>
+    <img alt="Winprovit logo" class="logo" src="./assets/winprovit.png" width="150" height="70" />
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
   </header>
 

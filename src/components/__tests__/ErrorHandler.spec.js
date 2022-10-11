@@ -13,12 +13,12 @@ describe('ErrorHandler', () => {
   })
 
   it('renders component ErrorHandler', () => {
-    expect(wrapper.find('.ërror')).toBeDefined();
+    expect(wrapper.find('.error')).toBeDefined();
   })
 
   it('renders errors', () => {
-    expect(wrapper.findAll('.ërror p').length).toEqual(2);
-    expect(wrapper.findAll('.ërror p')[0].text()).toEqual('Error get post list - Test unit');
-    expect(wrapper.findAll('.ërror p')[1].text()).toEqual('Error get users list - Test unit');
+    expect(wrapper.findAll('.error p').length).toEqual(2);
+    expect(wrapper.findAll('.error p')[0].text()).toEqual('Error get post list - Test unit');
+    expect(wrapper.findAll('.error p')[1].text()).toEqual('Error get users list - Test unit');
   })
 })

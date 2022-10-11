@@ -1,6 +1,7 @@
 <script setup>
 import { reactive, ref, watch  } from 'vue'
 import mergeUserPost from '@/utils/mergeUserPost'
+import separatePosts from '@/utils/separatePosts'
 import { getUserList, getPostList } from "@/services/Winprovit"
 
 import ErrorHandler from './ErrorHandler.vue';
@@ -9,7 +10,9 @@ import ArticlePost from './ArticlePost.vue';
 let usersData = ref([]);
 let postsData = ref([]);
 
+let postsIndex = ref(0);
 let postsResult = ref([]);
+let postsShow = reactive([]);
 let resultError = reactive([]);
 
 getPostList()
@@ -32,12 +35,24 @@ getUserList()
 
 watch([usersData, postsData], () => {
   if (usersData.value.length > 0 && postsData.value.length > 0) {
-    postsResult.value = mergeUserPost(postsData.value, usersData.value);
+    const postMerge = mergeUserPost(postsData.value, usersData.value);
+
+    console.info("Result Post: ", postMerge);
+    console.info("Separate Post: ", separatePosts(postMerge, 10));
+
+    postsResult.value = separatePosts(postMerge, 10);
+    postsShow.push(...postsResult.value[0])
   }
 });
+
+const morePost = () => {
+  postsIndex.value++
+  postsShow.push(...postsResult.value[postsIndex.value])
+}
 </script>
 
 <template>
   <ErrorHandler :errors="resultError" />
-  <ArticlePost v-for="post of postsResult" :post="post" />
+  <ArticlePost v-for="post of postsShow" :post="post" />
+  <button class="btn w-full" v-on:click="morePost()" v-if="!(postsIndex == postsResult.length - 1)">More posts</button>
 </template>

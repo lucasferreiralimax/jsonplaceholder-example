@@ -6,7 +6,7 @@ import { setupServer } from "msw/node";
 import { rest } from "msw";
 
 import Winprovit from '../Winprovit.vue';
-import { users, posts } from '../__mocks__/ServicesWinprovit';
+import { users, posts } from '../__mocks__/mockPosts';
 
 const mockPosts = mergeUserPost(posts, users);
 const mockPostsSeparate = separatePosts(mockPosts, 10);

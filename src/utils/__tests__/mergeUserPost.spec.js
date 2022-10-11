@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 
 import mergeUserPost from '../mergeUserPost.js'
 
-import { users, posts } from '../__mocks__/ServicesWinprovit';
+import { users, posts } from '../__mocks__/mockPosts';
 
 const mockPosts = mergeUserPost(posts, users);
 

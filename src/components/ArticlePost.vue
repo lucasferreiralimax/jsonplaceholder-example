@@ -22,6 +22,10 @@ defineProps({
   padding: 2rem;
   border: 1px solid var(--color-border);
   border-radius: 10px;
+  transition: .3s all;
+  &:hover {
+    transform: scale(1.02);
+  }
   .title { text-transform: capitalize; }
   .info {
     display: flex;

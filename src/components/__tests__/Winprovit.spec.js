@@ -1,11 +1,11 @@
-import { describe, it, expect, beforeAll, afterAll } from 'vitest'
-import { mount, flushPromises } from '@vue/test-utils'
-
-import Winprovit from '../Winprovit.vue'
-
-import { rest } from "msw";
+import { describe, it, expect, beforeAll, afterAll } from 'vitest';
+import { mount, flushPromises } from '@vue/test-utils';
+import mergeUserPost from '@/utils/mergeUserPost';
 import { setupServer } from "msw/node";
-import { mergeUserPost, users, posts } from '../__mocks__/ServicesWinprovit'
+import { rest } from "msw";
+
+import Winprovit from '../Winprovit.vue';
+import { users, posts } from '../__mocks__/ServicesWinprovit';
 
 const mockPosts = mergeUserPost(posts, users);
 

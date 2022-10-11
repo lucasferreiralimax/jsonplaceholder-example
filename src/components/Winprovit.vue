@@ -57,7 +57,7 @@ const morePost = () => {
 
 <template>
   <section :data-testid="dataTestid">
-    <ErrorHandler :errors="resultError" />
+    <ErrorHandler v-if="resultError.length > 0" :errors="resultError" />
     <ArticlePost v-for="post of postsShow" :post="post" />
     <button
       class="btn w-full"

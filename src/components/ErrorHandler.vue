@@ -5,13 +5,13 @@ defineProps({
 </script>
 
 <template>
-  <div class="ërror" v-if="errors">
+  <div class="error">
     <p v-for="error in errors">{{ error }}</p>
   </div>
 </template>
 
 <style lang="scss">
-.ërror {
+.error {
   text-align: center;
   p { color: red; }
 }

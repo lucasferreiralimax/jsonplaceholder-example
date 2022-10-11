@@ -57,7 +57,7 @@ const morePost = () => {
   <button
     class="btn w-full"
     v-on:click="morePost()"
-    v-if="!(postsIndex == postsResult.length - 1) && resultError.length == 0"
+    v-if="!(postsIndex == postsResult.length - 1) && postsShow.length > 0"
   >
     More posts
   </button>

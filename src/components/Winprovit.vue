@@ -7,6 +7,10 @@ import { getUserList, getPostList } from "@/services/Winprovit"
 import ErrorHandler from './ErrorHandler.vue';
 import ArticlePost from './ArticlePost.vue';
 
+defineProps({
+  dataTestid: String
+})
+
 let usersData = ref([]);
 let postsData = ref([]);
 
@@ -52,13 +56,15 @@ const morePost = () => {
 </script>
 
 <template>
-  <ErrorHandler :errors="resultError" />
-  <ArticlePost v-for="post of postsShow" :post="post" />
-  <button
-    class="btn w-full"
-    v-on:click="morePost()"
-    v-if="!(postsIndex == postsResult.length - 1) && postsShow.length > 0"
-  >
-    More posts
-  </button>
+  <section :data-testid="dataTestid">
+    <ErrorHandler :errors="resultError" />
+    <ArticlePost v-for="post of postsShow" :post="post" />
+    <button
+      class="btn w-full"
+      v-on:click="morePost()"
+      v-if="!(postsIndex == postsResult.length - 1) && postsShow.length > 0"
+    >
+      More posts
+    </button>
+  </section>
 </template>

@@ -54,5 +54,11 @@ const morePost = () => {
 <template>
   <ErrorHandler :errors="resultError" />
   <ArticlePost v-for="post of postsShow" :post="post" />
-  <button class="btn w-full" v-on:click="morePost()" v-if="!(postsIndex == postsResult.length - 1)">More posts</button>
+  <button
+    class="btn w-full"
+    v-on:click="morePost()"
+    v-if="!(postsIndex == postsResult.length - 1) && resultError.length == 0"
+  >
+    More posts
+  </button>
 </template>

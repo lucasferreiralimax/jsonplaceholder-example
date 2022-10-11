@@ -50,6 +50,11 @@
   }
 }
 
+::selection {
+  background: hsla(160, 100%, 37%, 1);
+  color: #000;
+}
+
 *,
 *::before,
 *::after {

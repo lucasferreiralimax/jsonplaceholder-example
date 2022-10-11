@@ -1,5 +1,4 @@
-import { describe, it, expect, beforeAll } from 'vitest'
-import { mount } from '@vue/test-utils'
+import { describe, it, expect } from 'vitest'
 
 import separatePosts from '../separatePosts.js'
 
@@ -10,7 +9,12 @@ describe('separatePosts', () => {
     expect(separatePosts(mockArray, 2)).toBeDefined();
   })
 
-  it('separatePosts return validation', () => {
+  it('separatePosts return validation one', () => {
+    expect(separatePosts(mockArray, 1)).toEqual([['test'], ['test'], ['test'], ['test']]);
+  })
+
+  it('separatePosts return validation two', () => {
     expect(separatePosts(mockArray, 2)).toEqual([['test', 'test'], ['test', 'test']]);
   })
+
 })

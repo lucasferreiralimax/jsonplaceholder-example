@@ -4,7 +4,7 @@ import Winprovit from './components/Winprovit.vue'
 
 <template>
   <header>
-    <img alt="Winprovit logo" class="logo" src="./assets/winprovit.png" width="150" height="70" />
+    <img alt="Winprovit logo" class="logo winprovit" src="./assets/winprovit.png" width="150" height="70" />
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
   </header>
 
@@ -21,6 +21,11 @@ import Winprovit from './components/Winprovit.vue'
 .logo {
   display: block;
   margin: 2rem auto 0;
+}
+@media (prefers-color-scheme: light) {
+  .winprovit {
+    filter: invert(1);
+  }
 }
 
 header {

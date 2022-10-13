@@ -1,5 +1,5 @@
 <script setup>
-import Winprovit from './components/Winprovit.vue'
+import Example from './components/Example.vue'
 import pkg from '../package.json';
 
 const version = pkg.version;
@@ -8,16 +8,13 @@ const version = pkg.version;
 <template>
   <header>
     <a class="logo-link" href="https://github.com/lucasferreiralimax" target="_blank">
-      <img alt="Winprovit logo" class="logo winprovit" src="./assets/winprovit.png" width="150" height="70" />
-    </a>
-    <a class="logo-link" href="https://github.com/lucasferreiralimax" target="_blank">
       <img alt="Vue logo" class="logo vue" src="./assets/logo.svg" width="125" height="125" />
     </a>
     Version {{ version }}
   </header>
 
   <main>
-    <Winprovit data-testid="winprovit" />
+    <Example data-testid="example" />
   </main>
 
   <footer>
@@ -37,12 +34,6 @@ const version = pkg.version;
 
 .logo-link {
   background: transparent;
-}
-
-@media (prefers-color-scheme: light) {
-  .winprovit {
-    filter: invert(1);
-  }
 }
 
 header {

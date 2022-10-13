@@ -5,7 +5,7 @@ import separatePosts from '@/utils/separatePosts'
 import { setupServer } from "msw/node";
 import { rest } from "msw";
 
-import Winprovit from '../Winprovit.vue';
+import Example from '../Example.vue';
 import { users, posts } from '../__mocks__/mockPosts';
 
 const mockPosts = mergeUserPost(posts, users);
@@ -27,12 +27,12 @@ const mockedServer = setupServer(
 );
 
 
-describe('Winprovit', () => {
+describe('Example', () => {
   let wrapper;
 
   beforeAll(async () => {
     mockedServer.listen()
-    wrapper = mount(Winprovit)
+    wrapper = mount(Example)
     await sleep(2000);
     await flushPromises();
   })

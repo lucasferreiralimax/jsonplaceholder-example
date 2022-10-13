@@ -1,4 +1,4 @@
-# winprovit
+# jsonplaceholder-example
 
 A test with render list posts with merged author and a lot test units automatic
 

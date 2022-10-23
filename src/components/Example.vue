@@ -2,7 +2,7 @@
 import { reactive, ref, watch  } from 'vue'
 import mergeUserPost from '@/utils/mergeUserPost'
 import separatePosts from '@/utils/separatePosts'
-import { getUserList, getPostList } from "@/services/Winprovit"
+import { getUserList, getPostList } from "@/services/jsonplaceholder"
 
 import ErrorHandler from './ErrorHandler.vue';
 import ArticlePost from './ArticlePost.vue';

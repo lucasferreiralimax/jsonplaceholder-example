@@ -1,6 +1,6 @@
 {
   "name": "jsonplaceholder-example",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "lucasferreiralimax (https://github.com/lucasferreiralimax)",
   "scripts": {
     "dev": "vite",
